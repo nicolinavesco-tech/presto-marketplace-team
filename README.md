@@ -1,53 +1,41 @@
- Creare pulsante unDo per il revisore, permette di tornare indietro
- creare admin board per eliminare gli admin
- 
- @if ($article_to_check->images->count())
-    @foreach ($article_to_check->images as $key => $image)
-        <div class="col-6 col-md-4 mb-4">
-            <img src="{{ Storage::url($image->path) }}" class="img-fluid rounded shadow"
-                 alt="Immagine {{ $key +1 }} dell'articolo '{{ $article_to_check->title }}'">
-        </div>
-    @endforeach
-@else
-    @for ($i = 0; $i < 6; $i++)
-        <div class="col-6 col-md-4 mb-4 text-center">
-            <img src="https://picsum.photos/300" alt="immagine segnaposto"
-                 class="img-fluid rounded shadow">
-        </div>
-    @endfor
-@endif
+Presto – Marketplace Web App (Laravel)
 
+Presto is a full stack web application inspired by platforms like Subito.it.  
+It was developed as a team project during my Full Stack Web Developer training.
 
-<img src="{{ $article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200' }}" class="card-img-top" alt="Immagine dell'articolo {{ $article->title }}">
+The goal of the project was to build a real working marketplace where users can register, create ads and manage their content.
 
+ Tech Stack:
 
-<div class="col-12 col-md-6 mb-3">
-    @if ($article->images->count() > 0)
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                @foreach ($article->images as $key => $image)
-                    <div class="carousel-item @if ($loop->first) active @endif">
-                        <img src="{{ Storage::url($image->path) }}"
-                             class="d-block w-100 rounded shadow"
-                             alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}">
-                    </div>
-                @endforeach
-            </div>
+- Laravel (PHP)
+- MySQL
+- HTML, CSS, JavaScript
+- Blade
+- Git / GitHub
 
-            @if ($article->images->count() > 1)
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
+ Features:
 
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            @endif
-        </div>
-    @else
-        <img src="https://picsum.photos/300" alt="Nessuna foto inserita dall'utente">
-    @endif
-</div>
+- User registration and authentication  
+- Create, edit and delete ads  
+- Dynamic content rendering  
+- Database integration (MySQL)  
+- Basic CRUD operations  
+
+ My Contribution:
+
+This project was developed in a team, so we worked together on different parts of the application.
+
+I mainly focused on the **frontend side**, working on the UI, layout, and user interaction, trying to make everything clear and usable.
+
+At the same time, I also worked on some **backend parts**, especially connecting the frontend with the database and handling some logic behind the features.
+
+Working in a team helped me understand better how to:
+- collaborate using Git  
+- manage merge conflicts  
+- organize code between frontend and backend  
+- build something real, not just isolated components  
+
+This is a learning project, but it represents my first real experience working on a complete full stack application in a team environment.
+
+It helped me move from just "writing code" to actually understanding how a real web application is structured and built.
 
